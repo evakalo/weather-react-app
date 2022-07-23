@@ -1,0 +1,71 @@
+.App {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: black;
+
+  background-image: url("https://images.pexels.com/photos/6199934/pexels-photo-6199934.jpeg?cs=srgb&dl=pexels-dimitri-weber-6199934.jpg&fm=jpg");
+  height: 300px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-border {
+  padding: 20px;
+  border: 3px solid #ecbe4c;
+  background-color: rgb(235 219 179);
+  border-radius: 10px;
+  width: 600px;
+}
+.wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+img {
+  display: inline;
+}
+
+#units {
+  font-size: 15px;
+  position: relative;
+  top: -20px;
+  left: -5px;
+  color: black;
+}
+a {
+  text-decoration: none;
+  color: #ecbe4c;
+}
+
+a:hover {
+  color: rgb(235 219 179);
+}
+small {
+  color: rgb(255, 253, 253);
+}
+.weather-forecast {
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.forecast-days {
+  color: rgb(112, 98, 98);
+  font-size: 16px;
+}
+.forecast-per-day {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.forecast-temperature-min {
+  opacity: 0.7;
+}
+.forecast-temperature-max {
+  opacity: 0.9;
+}

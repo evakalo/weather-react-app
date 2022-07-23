@@ -1,21 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Weather from "./Weather";
+import "./styles.css";
+import SearchForm from "./SearchForm";
+import City from "./City.js";
+import Footer from "./Footer";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <Weather city="Paris" />
-        </div>
-      </header>
+      <div className="wrapper">
+        <div className="wrapper-border">
+          <SearchForm />
+          <City />
+        </div>{" "}
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;
