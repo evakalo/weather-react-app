@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import City from "./City";
-import Searchform from "./Searchform.css";
+import "./Searchform.css";
 export default function SearchForm() {
   let [city, SetCity] = useState("Zagreb");
   const [loaded, SetLoaded] = useState(false);
@@ -29,7 +29,7 @@ export default function SearchForm() {
     SetCity(event.target.value);
   }
   let form = (
-    <form onSubmit={handleSubmit} className="mb-2" className="form">
+    <form onSubmit={handleSubmit} className="mb-2 form">
       <div className="row">
         <div className="col-md-6">
           <input
