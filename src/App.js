@@ -1,6 +1,6 @@
 import "./styles.css";
 import SearchForm from "./SearchForm";
-import City from "./City.js";
+
 import Footer from "./Footer";
 
 export default function App() {
@@ -9,7 +9,6 @@ export default function App() {
       <div className="wrapper">
         <div className="wrapper-border">
           <SearchForm />
-          <City />
         </div>{" "}
         <Footer />
       </div>

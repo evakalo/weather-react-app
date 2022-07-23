@@ -1,5 +1,6 @@
 .main-city-date {
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .main-image-temp img {
@@ -16,13 +17,16 @@ h1 {
   font-weight: bold;
   line-height: 48px;
   margin-bottom: 0;
+  margin-left: 30px;
 }
 
 ul {
   margin: 0;
   padding: 0;
 }
-
+.celsius-color {
+  color: black;
+}
 li {
   color: rgb(112, 117, 122);
   margin: 0;
