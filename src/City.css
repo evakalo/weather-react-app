@@ -26,6 +26,11 @@ ul {
 }
 .celsius-color {
   color: black;
+  font-size: 15px;
+  position: relative;
+  top: -20px;
+  left: -5px;
+  color: black;
 }
 li {
   color: rgb(112, 117, 122);
