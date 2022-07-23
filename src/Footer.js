@@ -3,7 +3,11 @@ import React from "react";
 export default function Footer() {
   return (
     <small>
-      <a href="https://github.com/evakalo/Vanilla-weather-app" target="_blank">
+      <a
+        href="https://github.com/evakalo/Vanilla-weather-app"
+        target="_blank"
+        rel="noreferrer"
+      >
         Open-source code
       </a>
       by Eva Kalogjera
