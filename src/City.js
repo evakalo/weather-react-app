@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import "./City.css";
 import "./styles.css";
 export default function City(props) {

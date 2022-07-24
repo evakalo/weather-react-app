@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.css";
+import "./styles.css";
+import "./City.css";
 import City from "./City";
 import "./Searchform.css";
 export default function SearchForm() {
@@ -28,21 +31,23 @@ export default function SearchForm() {
 
   let form = (
     <form onSubmit={handleSubmit} className="mb-2 form">
-      <div className="row">
-        <div className="col-md-6">
-          <input
-            type="search"
-            placeholder="Search city"
-            className="form-control"
-            onChange={updateCity}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="submit"
-            value="Search"
-            className="btn btn-primary btn-color"
-          />
+      <div className="container">
+        <div className="row search-engine">
+          <div className="col-md-6">
+            <input
+              type="search"
+              placeholder="Search city"
+              className="form-control "
+              onChange={updateCity}
+            />
+          </div>
+          <div className="col-md-3">
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-primary btn-color"
+            />
+          </div>
         </div>
       </div>
     </form>
