@@ -16,9 +16,9 @@ export default function City(props) {
       <div className="main-city-date">
         <h1>{props.city}</h1>
         <ul>
-          {/* <li>
-            Last updated at <span>July 22</span>
-          </li> */}
+          <li>
+            Last updated at <span>14 h</span>
+          </li>
           <li>{props.description}</li>
         </ul>
       </div>

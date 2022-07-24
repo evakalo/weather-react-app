@@ -3,7 +3,7 @@ import axios from "axios";
 import City from "./City";
 import "./Searchform.css";
 export default function SearchForm() {
-  let [city, SetCity] = useState("Zagreb");
+  let [city, SetCity] = useState("");
   const [loaded, SetLoaded] = useState(false);
   let [weather, SetWeather] = useState(null);
   function showWeather(response) {
@@ -64,12 +64,20 @@ export default function SearchForm() {
       </div>
     );
   } else {
-    // showFirst();
-    return form;
+    return (
+      <div>
+        {form}{" "}
+        {
+          <City
+            city="Zagreb"
+            temperature={18}
+            humidity={30}
+            wind={10}
+            description="Cloudy"
+            icon="http://openweathermap.org/img/wn/10d@2x.png"
+          />
+        }
+      </div>
+    );
   }
-
-  // function showFirst() {
-  //   let url = `https://api.openweathermap.org/data/2.5/weather?q=Zagreb&appid=d9ee3357a17988091ea6caf6d2758574&units=metric`;
-  //   axios.get(url).then(showWeather);
-  // }
 }
