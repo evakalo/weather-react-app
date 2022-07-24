@@ -6,11 +6,13 @@ import Footer from "./Footer";
 export default function App() {
   return (
     <div className="App">
-      <div className="wrapper">
-        <div className="wrapper-border">
-          <SearchForm />
-        </div>{" "}
-        <Footer />
+      <div classname="container">
+        <div className="wrapper">
+          <div className="wrapper-border">
+            <SearchForm />
+          </div>{" "}
+          <Footer />
+        </div>
       </div>
     </div>
   );
