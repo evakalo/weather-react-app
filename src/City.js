@@ -1,5 +1,6 @@
 import React from "react";
 import "./City.css";
+import "./styles.css";
 export default function City(props) {
   // let weatherData = {
   //   // city: "Paris",
@@ -14,10 +15,10 @@ export default function City(props) {
   return (
     <div>
       <div className="main-city-date">
-        <h1>{props.city}</h1>
+        <h1 className="city">{props.city}</h1>
         <ul>
           <li>
-            Last updated at <span>14 h</span>
+            Last updated at <span>14:07</span>
           </li>
           <li>{props.description}</li>
         </ul>
@@ -43,6 +44,30 @@ export default function City(props) {
           </ul>
         </div>
         <div className="weather-forecast"></div>
+      </div>
+
+      <div className="row weather-forecast">
+        <li className="col-4 forecast-days">
+          Monday
+          <br />
+          <img src={props.icon} alt="" />
+          <br />
+          28°C
+        </li>
+        <li className="col-4 forecast-days">
+          Tuesday
+          <br />
+          <img src={props.icon} alt="" />
+          <br />
+          20°C
+        </li>
+        <li className="col-4 forecast-days">
+          Wednesday
+          <br />
+          <img src={props.icon} alt="" />
+          <br />
+          24°C
+        </li>
       </div>
     </div>
   );

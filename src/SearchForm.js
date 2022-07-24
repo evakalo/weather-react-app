@@ -17,17 +17,15 @@ export default function SearchForm() {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
-
+  function updateCity(event) {
+    SetCity(event.target.value);
+  }
   function handleSubmit(event) {
     event.preventDefault();
-
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0ce4e992808ecc43cc56d00dbc5f3ec7&units=metric`;
     axios.get(url).then(showWeather);
   }
 
-  function updateCity(event) {
-    SetCity(event.target.value);
-  }
   let form = (
     <form onSubmit={handleSubmit} className="mb-2 form">
       <div className="row">
