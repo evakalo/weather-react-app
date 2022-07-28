@@ -30,9 +30,9 @@ export default function SearchForm() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit} className="mb-2 form">
-      <div className="searchForm">
-        <div className="row search-engine">
+    <form onSubmit={handleSubmit} className="mb-2 form ">
+      <div className="searchform">
+        <div className="row ">
           <div className="col-md-6">
             <input
               type="search"
