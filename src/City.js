@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./City.css";
 import "./styles.css";
+import FormatedDate from "./FormatedDate";
 export default function City(props) {
   // let weatherData = {
   //   // city: "Paris",
@@ -19,7 +20,11 @@ export default function City(props) {
         <h1 className="city">{props.city}</h1>
         <ul>
           <li>
-            Last updated at <span>14:07</span>
+            Last updated{" "}
+            <span>
+              {" "}
+              <FormatedDate date={props.date} />{" "}
+            </span>
           </li>
           <li>{props.description}</li>
         </ul>

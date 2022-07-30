@@ -5,17 +5,19 @@ import "./styles.css";
 import "./City.css";
 import City from "./City";
 import "./Searchform.css";
+
 export default function SearchForm() {
-  let [city, SetCity] = useState("");
-  const [loaded, SetLoaded] = useState(false);
-  let [weather, SetWeather] = useState(null);
+  let [city, SetCity] = useState("New York");
+  // const [loaded, SetLoaded] = useState(false);
+  let [weather, SetWeather] = useState({ ready: false });
   function showWeather(response) {
-    SetLoaded(true);
+    // SetLoaded(true);
     SetWeather({
+      ready: true,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
@@ -23,10 +25,14 @@ export default function SearchForm() {
   function updateCity(event) {
     SetCity(event.target.value);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
+
+  function search() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0ce4e992808ecc43cc56d00dbc5f3ec7&units=metric`;
     axios.get(url).then(showWeather);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   let form = (
@@ -52,7 +58,7 @@ export default function SearchForm() {
       </div>
     </form>
   );
-  if (loaded) {
+  if (weather.ready) {
     return (
       <div>
         {form}{" "}
@@ -63,14 +69,16 @@ export default function SearchForm() {
           wind={weather.wind}
           description={weather.description}
           icon={weather.icon}
+          date={weather.date}
         />
       </div>
     );
   } else {
+    search();
     return (
       <div>
         {form}{" "}
-        {
+        {/* {
           <City
             city="Zagreb"
             temperature={18}
@@ -79,7 +87,7 @@ export default function SearchForm() {
             description="Cloudy"
             icon="http://openweathermap.org/img/wn/10d@2x.png"
           />
-        }
+        } */}
       </div>
     );
   }
