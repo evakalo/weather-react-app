@@ -8,10 +8,9 @@ import "./Searchform.css";
 
 export default function SearchForm() {
   let [city, SetCity] = useState("New York");
-  // const [loaded, SetLoaded] = useState(false);
+
   let [weather, SetWeather] = useState({ ready: false });
   function showWeather(response) {
-    // SetLoaded(true);
     SetWeather({
       ready: true,
       temperature: response.data.main.temp,
@@ -75,20 +74,6 @@ export default function SearchForm() {
     );
   } else {
     search();
-    return (
-      <div>
-        {form}{" "}
-        {/* {
-          <City
-            city="Zagreb"
-            temperature={18}
-            humidity={30}
-            wind={10}
-            description="Cloudy"
-            icon="http://openweathermap.org/img/wn/10d@2x.png"
-          />
-        } */}
-      </div>
-    );
+    return <div>{form} </div>;
   }
 }

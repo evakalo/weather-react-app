@@ -33,17 +33,19 @@ img {
   display: inline;
 }
 
-#units {
+/* #units {
   font-size: 15px;
   position: relative;
   top: -20px;
   left: -5px;
   color: black;
-}
-a {
+
+} */
+/* a {
   text-decoration: none;
+
   color: #ecbe4c;
-}
+} */
 
 a:hover {
   color: rgb(235 219 179);
