@@ -13,6 +13,7 @@ export default function SearchForm() {
   function showWeather(response) {
     SetWeather({
       ready: true,
+      coord: response.data.coord,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -69,6 +70,7 @@ export default function SearchForm() {
           description={weather.description}
           icon={weather.icon}
           date={weather.date}
+          coord={weather.coord}
         />
       </div>
     );
