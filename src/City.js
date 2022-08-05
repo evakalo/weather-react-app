@@ -57,9 +57,20 @@ export default function City(props) {
           </div>
           <div className="weather-forecast"></div>
         </div>
-        <WeatherForecastDay data={forecast[1]} />{" "}
-        {/* <WeatherForecastDay data={forecast[2]} />{" "}
-        <WeatherForecastDay data={forecast[3]} /> */}
+        <div className="row weather-forecast">
+          <div className="col-4 forecast-days">
+            {" "}
+            <WeatherForecastDay data={forecast[1]} />
+          </div>{" "}
+          <div className="col-4 forecast-days">
+            {" "}
+            <WeatherForecastDay data={forecast[2]} />
+          </div>{" "}
+          <div className="col-4 forecast-days">
+            {" "}
+            <WeatherForecastDay data={forecast[3]} />
+          </div>{" "}
+        </div>
       </div>
     );
   } else {
