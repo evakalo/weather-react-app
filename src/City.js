@@ -70,6 +70,9 @@ export default function City(props) {
                   <WeatherForecastDay data={dailyForecast} />
                 </div>
               );
+            else {
+              return null;
+            }
           })}
 
           {/* <div className="col-4 forecast-days">
