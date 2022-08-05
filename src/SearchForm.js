@@ -14,6 +14,7 @@ export default function SearchForm() {
     SetWeather({
       ready: true,
       coord: response.data.coord,
+      name: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -63,7 +64,7 @@ export default function SearchForm() {
       <div>
         {form}{" "}
         <City
-          city={city}
+          city={weather.name}
           temperature={Math.round(weather.temperature)}
           humidity={weather.humidity}
           wind={weather.wind}
@@ -76,6 +77,6 @@ export default function SearchForm() {
     );
   } else {
     search();
-    return <div>{form} </div>;
+    return <div>Loading </div>;
   }
 }
