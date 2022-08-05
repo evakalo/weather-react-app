@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./City.css";
@@ -11,10 +11,15 @@ export default function City(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coord]);
+
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
+
   if (loaded) {
     console.log(forecast);
 
@@ -58,18 +63,23 @@ export default function City(props) {
           <div className="weather-forecast"></div>
         </div>
         <div className="row weather-forecast">
-          <div className="col-4 forecast-days">
-            {" "}
-            <WeatherForecastDay data={forecast[1]} />
-          </div>{" "}
-          <div className="col-4 forecast-days">
+          {forecast.map(function (dailyForecast, index) {
+            if (index > 0 && index < 4)
+              return (
+                <div className="col forecast-days" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+          })}
+
+          {/* <div className="col-4 forecast-days">
             {" "}
             <WeatherForecastDay data={forecast[2]} />
           </div>{" "}
           <div className="col-4 forecast-days">
             {" "}
             <WeatherForecastDay data={forecast[3]} />
-          </div>{" "}
+          </div>{" "} */}
         </div>
       </div>
     );
