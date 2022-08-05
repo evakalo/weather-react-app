@@ -20,6 +20,13 @@ export default function City(props) {
     setLoaded(true);
   }
 
+  function load() {
+    let lat = props.coord.lat;
+    let lon = props.coord.lon;
+    let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=0ce4e992808ecc43cc56d00dbc5f3ec7&units=metric`;
+    axios.get(url).then(handleResponse);
+    return null;
+  }
   if (loaded) {
     console.log(forecast);
 
@@ -87,10 +94,6 @@ export default function City(props) {
       </div>
     );
   } else {
-    let lat = props.coord.lat;
-    let lon = props.coord.lon;
-    let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=0ce4e992808ecc43cc56d00dbc5f3ec7&units=metric`;
-    axios.get(url).then(handleResponse);
-    return null;
+    load();
   }
 }
